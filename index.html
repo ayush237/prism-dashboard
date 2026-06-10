@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Control Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Project Prism</h1>
+                <p>Telemetry Control Center</p>
+            </div>
+            <div class="status-badge" id="header-status-badge">
+                <div class="pulse-indicator"></div>
+                <span id="header-status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <div class="grid-layout">
+            <!-- Status Card -->
+            <div class="card status-card">
+                <h2>System Status</h2>
+                <div class="status-content">
+                    <div class="status-row">
+                        <span class="label">State</span>
+                        <span class="value" id="current-status">Unknown</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="label">Last Execution</span>
+                        <span class="value" id="last-execution">--</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="label">Active Task</span>
+                        <span class="value" id="active-task">None</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cron History Card -->
+            <div class="card cron-card">
+                <h2>Cron Execution History</h2>
+                <div class="cron-grid" id="cron-grid-container">
+                    <!-- Javascript will populate rows here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Expandable Error Log Card -->
+        <div class="card error-card">
+            <details>
+                <summary>
+                    <h2>System Error Logs</h2>
+                    <span class="error-count" id="error-badge">0</span>
+                </summary>
+                <div class="error-content" id="error-log-container">
+                    <!-- Javascript will populate errors here -->
+                </div>
+                
+                <h3 class="recent-logs-title">Tail (prism_system.log)</h3>
+                <div class="error-content tail-logs" id="recent-log-container">
+                    <!-- Javascript will populate tail here -->
+                </div>
+            </details>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
