@@ -1,5 +1,5 @@
 const POLL_INTERVAL = 60000;
-const STATE_URL = 'https://gist.github.com/ayush237/075ca4a4a6c3a886f0ed0c6bed4350be';
+const STATE_URL = 'https://api.github.com/gists/075ca4a4a6c3a886f0ed0c6bed4350be';
 
 // DOM Elements
 const elCurrentStatus = document.getElementById('current-status');
